@@ -1,0 +1,90 @@
+<view wx:for="{{age}}">
+  {{item}}-{{index}}
+</view>
+<view class="wrapper">
+<!-- 标题部分 -->
+         <view class="navTi">
+         <text class="date">{{mounth}}月{{day}}</text>
+         <text class="dirc">后来的我们没有走到一起那陪着我woaini</text>
+        </view>
+        <!-- 第一个杂志 -->
+        <view class='f-pic'>
+         <image src='../img/020.png'></image>
+         <view class='btn'>
+            <text>+</text>
+           <text>女性穿搭</text>
+           <text>男性穿搭</text>
+           <text>心里</text>
+          <text>深度阅读</text>
+          <text>人生整理术</text>
+          <text>读书</text>
+          <text>日韩剧</text>
+           <text>吃喝攻略</text>
+          <text>...</text>
+         </view>
+        </view>
+        <!-- 第二个杂志 -->
+        <view class='s-pic'>
+            <view class='tit'>
+              <image class='head'src="../img/020.png"></image>
+              <text>neffy等96人马克了</text>
+            </view>
+            <view class='s-pic-pic'>
+              <image src="../img/020.png"></image>
+              <text>不论之吻？《吻》背后令人惊讶的往事</text>
+            </view>
+            <view class='pic-bot'>
+                  <view class='pic-bot-left'>
+                  <text>深度阅读</text>
+                  </view>
+                  <view class='pic-bot-rig'>
+                  <image src='../img/ccc.png'></image>
+                  <image src='../img/f.png'></image>
+                  <image src='../img/ddd.png'></image>
+                  <image src='../img/blapng.png'></image>
+                  </view>
+            </view>
+        </view>
+        <view class='s-pic'>
+            <view class='tit'>
+              <image class='head'src="../img/020.png"></image>
+              <text>neffy等96人马克了</text>
+            </view>
+            <view class='s-pic-pic'>
+              <image src="../img/020.png"></image>
+              <text>不论之吻？《吻》背后令人惊讶的往事</text>
+            </view>
+            <view class='pic-bot'>
+                  <view class='pic-bot-left'>
+                  <text>深度阅读</text>
+                  </view>
+                  <view class='pic-bot-rig'>
+                  <image src='../img/ccc.png'></image>
+                  <image src='../img/f.png'></image>
+                  <image src='../img/ddd.png'></image>
+                  <image src='../img/blapng.png'></image>
+                  </view>
+            </view>
+        </view>
+        <view class='s-pic'>
+            <view class='tit'>
+              <image class='head'src="../img/020.png"></image>
+              <text>neffy等96人马克了</text>
+            </view>
+            <view class='s-pic-pic'>
+              <image src="../img/020.png"></image>
+              <text>不论之吻？《吻》背后令人惊讶的往事</text>
+            </view>
+            <view class='pic-bot'>
+                  <view class='pic-bot-left'>
+                  <text>深度阅读</text>
+                  </view>
+                  <view class='pic-bot-rig'>
+                  <image src='../img/ccc.png'></image>
+                  <image src='../img/f.png'></image>
+                  <image src='../img/ddd.png'></image>
+                  <image src='../img/blapng.png'></image>
+                  </view>
+            </view>
+        </view>
+</view>

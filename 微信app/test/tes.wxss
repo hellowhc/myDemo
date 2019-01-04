@@ -1,0 +1,107 @@
+/* test/tes.wxss */
+.wrapper{
+  background: #ccc;
+  /* height: 1000px; */
+}
+/* 制作标题部分 */
+.wrapper .navTi{
+  background: #fff;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.wrapper .navTi .date{
+  font-size: 45rpx;
+  font-weight: bold;
+  position: relative;
+}
+.wrapper .navTi .date::after{
+  content:'';
+  position: absolute;
+  bottom: -15rpx;
+  left: 40rpx;
+  display: inline-block;
+  width: 90rpx;
+  height: 5rpx;
+  background: #000;
+}
+.wrapper .navTi .dirc{
+  margin-top: 30rpx;
+  font-size: 29rpx;
+}
+
+/* 制作第一个杂志 */
+.wrapper .f-pic{
+  background: #fff;
+}
+.wrapper .f-pic>image{
+  padding: 10rpx;
+  width: 730rpx;
+  height: 600rpx;
+}
+.wrapper .f-pic .btn{
+    padding: 10rpx;
+    width: 730rpx;
+    margin-left:-5rpx;
+}
+.wrapper .f-pic .btn>text{
+    display: inline-block;
+    padding: 7rpx 12rpx;
+    border: 3rpx solid black;
+    margin: 5rpx 10rpx;
+}
+.wrapper .f-pic .btn text:nth-of-type(1){
+  background: black;
+  color: #fff;
+}
+
+/*第二个杂志的制作 */
+.s-pic{
+  background: #fff;
+  height: 800rpx;
+  border: 1px solid black;
+  padding: 20rpx;
+  margin:20rpx;
+}
+.s-pic .tit{
+  height: 100rpx;
+  display: flex;
+  align-items: center;
+}
+.s-pic .tit .head{
+  height: 100%;
+  width: 100rpx;
+  border-radius: 50%;
+}
+.s-pic .tit>text{
+  font-size: 33rpx;
+  color: #bbb;
+  margin-left: 15rpx;
+}
+.s-pic .s-pic-pic{
+  width: 660rpx;
+}
+.s-pic .s-pic-pic>image{
+  width: 100%;
+}
+.s-pic .s-pic-pic>text{
+  display: block;
+  padding: 26rpx;
+  font-size: 36rpx;
+}
+.s-pic .pic-bot{
+  margin-top: -10rpx;
+  height: 80rpx;
+
+  display: flex;
+  justify-content:space-between;
+  align-items: center;
+}
+.s-pic .pic-bot .pic-bot-left>text{
+  border: 3rpx solid black;
+  padding: 5rpx 10rpx;
+}
+.s-pic .pic-bot .pic-bot-rig image{
+  width: 60rpx;
+  height: 60rpx;
+}
