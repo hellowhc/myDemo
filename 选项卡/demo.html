@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>JQerry</title>
+</head>
+<body>
+    <style>
+    *{
+        padding:0;
+        margin:0;
+        list-style: none;
+    }
+    .div1{
+        width:300px;height:300px;border:1px solid  black;text-align: center;
+ 
+    }
+    .div1 button{
+    background-color: beige;text-align:center;width:50px;margin-left:10px;
+
+  }
+  .div1 .active{
+      background: red;
+  }
+   .div1 .div2{
+    width:300px;height:300px;border:1px solid black ;overflow: hidden;
+   }
+   .div1 .div2 ul .li-active{
+   display: block;
+   
+   }
+   .div1 .div2 ul li{
+    width:300px;height:300px;line-height: 300px;
+    overflow: hidden; background: pink;
+    display: none;
+   }
+  
+    </style>
+    <div class="div1">
+        <button class="active">11</button>
+        <button>22</button>
+        <button>33</button>
+        <div class="div2">
+            <ul>
+                <li class="li-active">11</li>
+                <li class="li-active">22</li>
+                <li class="li-active">33</li>
+            </ul>
+        </div>
+       
+       
+    </div>
+   <script src="jquery.js"></script>
+    <script>
+    $('button').click(function(){
+        $('.active').removeClass('active');
+        $(this).addClass('active');
+       var index=$(this).index();
+       console.log(index);
+       $('li').removeClass('li-active');
+       $('li').eq(index).addClass('li-active');
+    })
+
+    </script>
+</body>
+</html>

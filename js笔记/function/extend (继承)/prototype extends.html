@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>使用prototype来实现继承模式</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" type="text/css" media="screen" href="main.css" />
+    <script src="main.js"></script>
+</head>
+<body>
+    <script type="text/javascript">
+        Father.prototype.LastName='huang';
+    function Father(){
+        this.name='fdf';
+
+    }
+    function Sun(){
+
+    }
+    Sun.prototype=Father.prototype;
+    var sun=new Sun();
+    
+    
+    </script>
+</body>
+</html>

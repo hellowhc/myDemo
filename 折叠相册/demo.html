@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>折叠相册</title>
+    <link rel="stylesheet" href="demo.css">
+</head>
+<body>
+    <div class="wrapper">
+        <ul class="wraBox">
+            <li class="Box1 moveBox">
+                <ul>
+                    <li class="card1 moveCard"><img src="img/1.png">
+                    <div class="text">picture</div>
+                    </li>
+                    <li class="card2 moveCard"><img src="img/2.png">
+                    <div class="text">picture</div>
+                    </li>
+                    <li class="card3 moveCard"><img src="img/3.png">
+                    <div class="text">picture</div>
+                    </li>
+                </ul>
+            </li>
+            <li class="Box2 moveBox">
+                <ul>
+                    <li class="card1 moveCard"><img src="img/4.png">
+                    <div class="text">picture</div>
+                    </li>
+                    <li class="card2 moveCard"><img src="img/5.png">
+                    <div class="text">picture</div>
+                    </li>
+                    <li class="card3 moveCard"><img src="img/6.png">
+                    <div class="text">picture</div>
+                    </li>
+                </ul>
+            </li>
+            <li class="Box3  moveBox">
+                <ul>
+                    <li class="card1 moveCard"><img src="img/3.png">
+                    <div class="text">picture</div>
+                    </li>
+                    <li class="card2 moveCard"><img src="img/2.png">
+                    <div class="text">picture</div>
+                    </li>
+                    <li class="card3 moveCard"><img src="img/1.png">
+                    <div class="text">picture</div>
+                    </li>
+                </ul>
+            </li>
+        </ul>
+    </div> 
+    <script src="jquery.js"></script>
+    <script>
+     $('.wrapper').on('click',function(){
+        $('.wrapper').toggleClass('transition')
+     })
+    </script>
+</body>
+</html>

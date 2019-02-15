@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>用call 来获取函数的方法和值</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" type="text/css" media="screen" href="main.css" />
+    <script src="main.js"></script>
+</head>
+<body>
+    <script type="text/javascript">
+    function Car(name, height, width){
+        this.name=name;
+        this.height=height;
+        this.width=width;
+
+    }
+    function Wheel(name,height,width,color){
+        Car.call(this,name,height,width);//这个this 是Wheel
+            this.color=color;
+    }
+    var wheel=new Wheel('fsdfd',12,23,'blue');    
+    
+    </script>
+</body>
+</html>

@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>()()两个括号的用法</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" type="text/css" media="screen" href="main.css" />
+    <script src="main.js"></script>
+</head>
+<body>
+    <script type="text/javascript">
+    var bar={a:10};
+    function print(){
+            bar.a='a';
+            Object.prototype.b='b';
+            return function inner(){
+
+                console.log(bar.a);
+                console.log(bar.b);
+            }
+    }
+    print()(); //第一个()是函数的返回   第二个()是函数执行；
+    //执行结果 打印出来 a,b
+    
+    </script>
+</body>
+</html>

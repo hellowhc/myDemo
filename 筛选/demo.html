@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <link rel="stylesheet" href="demo1.css">
+</head>
+
+<body>
+    <div class="wrapper">
+        <div class="search">
+            <input type="text" placeholder="请输入用户名" id="inp">
+            <ul id="sex">
+                <li sex="all" class="active">All</li>
+                <li sex="male">Male</li>
+                <li sex="female">Female</li>
+            </ul>
+        </div>
+        <div class="userList">
+            <ul id="list">
+
+            </ul>
+        </div>
+    </div>
+    <script src="./crate.js"></script>
+   <script src="./index.js"></script>
+    <script>
+     
+//         var person = [
+//             { name: '刘小华', src: '1.jpg', sex: 'male', des: '漂亮的女孩子' },
+//             { name: '王花', src: '2.jpg', sex: 'male', des: '漂亮的程序猿' },
+//             { name: '陈军', src: '3.jpg', sex: 'female', des: '我是一个学霸' },
+//             { name: '王华', src: '4.jpg', sex: 'female', des: '我喜欢游泳' },
+//             { name: '陈思思', src: '5.jpg', sex: 'male', des: '我喜欢看电影' },
+//             { name: '陈学习', src: '6.jpg', sex: 'female', des: '我爸我妈爱学习' } ,
+//             { name: '王美丽', src: '7.jpg', sex: 'male', des: '我妈是美丽得妈妈' }
+
+//         ];
+//         var listul = document.getElementById('list');
+//         var Oinp=document.getElementById('inp');
+//         var oSeX=document.getElementById('sex');
+//     var listul=document.getElementById('list');
+//      var inp=document.getElementById('inp');
+//     var ul=document.getElementById('sex');
+//     //防抖方法
+//     function debounce(handel,delay){
+//     var timer;
+//     return function(){
+//         clearTimeout(timer);
+//         var self=this;
+//         var arg=arguments;
+//         timer=setTimeout(function(){
+//             handel.apply(self,arg);
+//         },delay)
+//     }
+// }
+
+//     function render(list){
+//         var str='';
+//         list.forEach(function(ele,index){
+//             str+='<li>\
+//                 <img src="./img/' + ele.src + '" alt="">\
+//                 <span class="name">' + ele.name + '</span> \
+//                 <span class="des">'+ ele.des + '</span>\
+//                 </li>';
+//                 listul.innerHTML=str;
+//         })
+//     }
+//     render(person);
+ 
+    // inp.oninput=function(){
+    //      var val=this;
+    //      var timer;
+    //      clearTimeout(timer);
+    //      timer=setTimeout(function(){
+    //         state.text=val.value;          
+    //         render(addfn(obj,person));
+    //      },1000)
+    //  } 
+
+
+    //  inp.oninput=debounce(event,1000)
+    //  function event(){
+    //     var val=this;
+    //     state.text=val.value;
+    //     render(addfn(obj,person));
+    //     }
+        
+        
+    //     function fileText(val,arr){
+    //         var newArr=arr.filter(function(ele,index){
+    //             if(ele.name.indexOf(val)!==-1){
+    //                 return true;
+    //             }                
+    //         });           
+            
+    //         return newArr;            
+    //     }
+
+    //     ul.addEventListener('click',function(e){
+    //         if( e.target.tagName=='LI'){
+    
+    //         state.sex=e.target.getAttribute('sex');
+    //         document.getElementsByClassName('active')[0].className='';
+    //         e.target.className='active';
+    //         render(addfn(obj,person));
+    //         }
+           
+    //     },false)
+    //     function fileSex(sex,arr){
+    //         if(sex=='all'){
+    //             return arr;
+    //         }else{
+    //            return arr.filter(function(ele,index){
+    //                 if(sex==ele.sex){
+    //                     return true;
+    //                 }
+    //             })
+    //         }           
+    //     }
+    //     var obj={
+    //         text:fileText,
+    //         sex:fileSex
+    //     }
+    //     var state={
+    //         text:'',
+    //         sex:'all'
+    //     }
+    //     function addfn(obj,arr){
+    //         var lastArr=arr;
+    //         for(var prop in obj){
+    //             lastArr=obj[prop](state[prop],lastArr);
+    //           console.log(lastArr)
+    //         }
+            
+    //         return lastArr;
+    //     }
+
+
+
+
+
+    </script>
+</body>
+
+</html> 
