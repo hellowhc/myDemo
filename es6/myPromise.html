@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+      // Promise特点
+      // 状态 pending => resolved, rejected,状态转换是单向, 携带结果数据
+      // Promise.prototype.then 返回Promise对象, 状态由回调函数的返回值决定
+      // 对应状态的处理函数，返回的是非Promise对象 N , 返回一个resolved状态的Promise对象，结果数据为 N
+      //                            Promise对象 P ,  新返回的Promise对象的状态由P决定
+
+      // 作业： Promise默写， 普通函数    
+      
+
+      class myPromise {
+          constructor(fn) {
+            //   'use strict'
+              if(typeof fn !== 'function') {
+                  throw TypeError(`myPromise resolver ${fn} is not a function`)
+              } else {
+                  let resolve = data => {
+                      if(this.status == 'pending') {
+                        setTimeout(() => {
+                            this.status = 'resolved'
+                            this.data = data
+                            if(this.resolveCB.length > 0){
+                                this.resolveCB.forEach(cb => cb())
+                            }
+                        }, 0)
+                      }  
+                  }
+                  let reject = err => {
+                      if(this.status == 'pending') {
+                        setTimeout( ()=> {
+                            this.status = 'rejected'
+                            this.data = err
+                            if(this.rejectCB.length > 0) {
+                                this.rejectCB.forEach(cb => cb())
+                            }
+                        },0)
+                      }
+                  }
+                  this.status = 'pending'
+                  this.data = undefined
+                  this.resolveCB = []
+                  this.rejectCB = []
+                  fn(resolve, reject)
+              }
+          }
+          then(onResolve, onReject) {
+            //   返回Promise对象
+              if(this.status == 'resolved') {
+                     return new myPromise((resolve, reject) => {
+                             let res = onResolve(this.data)  // 回调函数的返回值
+                             if(res instanceof myPromise) {
+                                  res.then(resolve, reject)                                                                                                                                                                                                                                                                   
+                             } else {
+                                  resolve(res)
+                             }
+                     })
+              } else if (this.status == 'rejected') {
+                     return new myPromise((resolve, reject) => {
+                         let res = onReject(this.data) 
+                         if(res instanceof myPromise) {
+                             res.then(resolve, reject)
+                         } else {
+                             resolve(res)
+                         }
+                     })
+              } else if(this.status == 'pending') {
+                    return new myPromise((resolve, reject) => {  // 返回Primise对象
+                        // 把回调存起来，当状态变化的时候再去调用它
+                           this.resolveCB.push((resolveFn => {
+                                 return () => {
+                                     let res = resolveFn && resolveFn(this.data)
+                                     if(res instanceof myPromise) {
+                                        res.then(resolve, reject)
+                                     } else {
+                                         resolve(res)
+                                     }
+                                 }
+                           })(onResolve))
+
+                           this.rejectCB.push((rejectFn => {
+                               return () => {
+                                   let res = rejectFn && rejectFn(this.data)
+                                   if(res instanceof myPromise) {
+                                       res.then(resolve, reject)
+                                   } else {
+                                       resolve(res)
+                                   }
+                               }
+                           })(onReject))
+                    })
+              }
+          }
+          static resolve(data) {
+                return new myPromise(suc => {
+                     suc(data)
+                })
+          }
+          static reject(data) {
+              return new myPromise((suc, err) => {
+                  err(data)
+              })
+          }
+      }
+
+    //   let p = new myPromise(suc => setTimeout(() => {
+    //     suc(1)
+    //   }, 1000))
+    //   p.then(data => console.log(data))
+    //   p.then(data => console.log(data))
+    
+    let p = new myPromise(suc => {
+        console.log(1)
+        suc(2)
+    })
+    p.then(data => console.log(data))
+    console.log(3)
+    
+
+//   let p = new myPromise((suc, err) => {
+//          setTimeout(function () {
+//             err(1)
+//          }, 1000)
+//     })
+
+//     p.then(null,data => {
+//         console.log(data)
+//         return new myPromise(suc => {
+//             setTimeout(() => {
+//                 suc(data+1)
+//             }, 2000)
+//         })
+//     })
+//     .then(data => {
+//         console.log(data)
+//        return new myPromise(function(suc) {
+//            setTimeout(() => {
+//                 suc(data + 1)
+//            }, 2000)
+//        })
+//     })
+//     .then(data => console.log(data))
+
+
+
+    // myPromise.prototype.then
+    //   let p = new Promise(function (resolve, reject) {
+    //           resolve(1)
+    //           reject(1)
+    //   })
+    // //   console.log(p)
+    //   let mp = new myPromise(function (resolve, reject) {
+    //          resolve(1)
+    //          reject(1)
+    //   })
+
+    //   mp.then(data => new myPromise((suc, err) => {
+    //        err(data + 1)
+    //   }))
+    //     .then(null, data => console.log(`err ${data}`))      
+
+    //  'xxx' => 用自己已经会的知识去解释他 => 该学习了！！！！
+      
+    </script>
+</body>
+</html>
